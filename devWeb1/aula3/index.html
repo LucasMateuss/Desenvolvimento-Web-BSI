@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #menu {
+            margin-bottom: 20px;
+        }
+        .container {
+            display: none;
+            margin-bottom: 20px;
+        }
+        .container.active {
+            display: block;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercícios de JavaScript</h1>
+
+    <div id="menu">
+        <h2>Escolha um exercício:</h2>
+        <ul>
+            <li><a href="#" onclick="showExercise(1)">1. Diferença entre valor do ingresso e proposta recebida</a></li>
+            <li><a href="#" onclick="showExercise(2)">2. Quantidade de curtidas recebidas</a></li>
+            <li><a href="#" onclick="showExercise(3)">3. Número de tweets em um ano</a></li>
+            <li><a href="#" onclick="showExercise(4)">4. Nota final do aluno</a></li>
+            <li><a href="#" onclick="showExercise(5)">5. Tempo acordado assistindo os filmes</a></li>
+            <li><a href="#" onclick="showExercise(6)">6. Dias para completar o jogo</a></li>
+            <li><a href="#" onclick="showExercise(7)">7. Preço de venda da pipoca</a></li>
+            <li><a href="#" onclick="showExercise(8)">8. Comparar dois números</a></li>
+            <li><a href="#" onclick="showExercise(9)">9. Positivo ou Negativo</a></li>
+            <li><a href="#" onclick="showExercise(10)">10. Verificar Sexo</a></li>
+            <li><a href="#" onclick="showExercise(11)">11. Vogal ou Consoante</a></li>
+            <li><a href="#" onclick="showExercise(12)">12. Divisível por 5</a></li>
+            <li><a href="#" onclick="showExercise(13)">13. Intervalo 20 e 90</a></li>
+            <li><a href="#" onclick="showExercise(14)">14. Verificar Votação</a></li>
+            <li><a href="#" onclick="showExercise(15)">15. Média do Aluno</a></li>
+            <li><a href="#" onclick="showExercise(16)">16. Salário dos Professores</a></li>
+            <li><a href="#" onclick="showExercise(17)">17. Par ou Ímpar</a></li>
+            <li><a href="#" onclick="showExercise(18)">18. Média Parcial</a></li>
+            <li><a href="#" onclick="showExercise(19)">19. Números negativos e média positiva</a></li>
+            <li><a href="#" onclick="showExercise(20)">20. Par ou ímpar</a></li>
+            <li><a href="#" onclick="showExercise(21)">21. Soma pares e ímpares</a></li>
+            <li><a href="#" onclick="showExercise(22)">22. Média de alturas</a></li>
+            <li><a href="#" onclick="showExercise(23)">23. Contar números negativos</a></li>
+            <li><a href="#" onclick="showExercise(24)">24. Caneta e tinta</a></li>
+            <li><a href="#" onclick="showExercise(25)">25. Atletas: altura e média</a></li>
+            <li><a href="#" onclick="showExercise(26)">26. Nomes e idades de alunos</a></li>
+            <li><a href="#" onclick="showExercise(27)">27. Calcular valores de y</a></li>
+            <li><a href="#" onclick="showExercise(28)">28. Menor e maior valor</a></li>
+            <li><a href="#" onclick="showExercise(29)">29. Soma da série 1 a 100</a></li>
+            <li><a href="#" onclick="showExercise(30)">30. Soma da série 2</a></li>
+            <li><a href="#" onclick="showExercise(31)">31. Calcular valor de S</a></li>
+            <li><a href="#" onclick="showExercise(32)">32. Calcular π com série</a></li>
+            <li><a href="#" onclick="showExercise(33)">33. Fatorial de um número</a></li>
+            <li><a href="#" onclick="showExercise(34)">34. Soma da série 3</a></li>
+            <li><a href="#" onclick="showExercise(35)">35. Valor de e^x</a></li>
+        </ul>
+    </div>
+
+    <div id="exercises">
+        <div id="exercise1" class="container">
+            <h2>1. Diferença entre valor do ingresso e proposta recebida</h2>
+            <label for="valorProposta">Valor da proposta (R$):</label>
+            <input type="number" id="valorProposta" step="0.01">
+            <br>
+            <button onclick="calcularDiferencaIngresso()">Calcular Diferença</button>
+            <div id="resultado1"></div>
+        </div>
+
+        <div id="exercise2" class="container">
+            <h2>2. Quantidade de curtidas recebidas</h2>
+            <label for="dias">Quantidade de dias:</label>
+            <input type="number" id="dias">
+            <br>
+            <button onclick="calcularCurtidas()">Calcular Curtidas</button>
+            <div id="resultado2"></div>
+        </div>
+
+        <div id="exercise3" class="container">
+            <h2>3. Número de tweets em um ano</h2>
+            <label for="tweetsPorAula">Número de tweets por aula:</label>
+            <input type="number" id="tweetsPorAula">
+            <br>
+            <button onclick="calcularTweetsAno()">Calcular Tweets em um Ano</button>
+            <div id="resultado3"></div>
+        </div>
+
+        <div id="exercise4" class="container">
+            <h2>4. Nota final do aluno</h2>
+            <label for="notaInicial">Nota inicial:</label>
+            <input type="number" id="notaInicial" step="0.1">
+            <br>
+            <label for="numeroTweets">Número de tweets no ano:</label>
+            <input type="number" id="numeroTweets">
+            <br>
+            <button onclick="calcularNotaFinal()">Calcular Nota Final</button>
+            <div id="resultado4"></div>
+        </div>
+
+        <div id="exercise5" class="container">
+            <h2>5. Tempo acordado assistindo os filmes</h2>
+            <label for="sonoGaroto">Tempo de sono do garoto:</label>
+            <input type="number" id="sonoGaroto">
+            <br>
+            <label for="sonoGarota">Tempo de sono da garota:</label>
+            <input type="number" id="sonoGarota">
+            <br>
+            <button onclick="calcularTempoAcordado()">Calcular Tempo Acordado</button>
+            <div id="resultado5"></div>
+        </div>
+
+        <div id="exercise6" class="container">
+            <h2>6. Dias para completar o jogo</h2>
+            <label for="horasPorDia">Horas jogadas por dia:</label>
+            <input type="number" id="horasPorDia" step="0.1">
+            <br>
+            <button onclick="calcularDiasParaCompletarJogo()">Calcular Dias</button>
+            <div id="resultado6"></div>
+        </div>
+
+        <div id="exercise7" class="container">
+            <h2>7. Preço de venda da pipoca</h2>
+            <button onclick="calcularPrecoVenda()">Calcular Preço de Venda</button>
+            <div id="resultado7"></div>
+        </div>
+
+        <div id="exercise8" class="container">
+            <h2>8. Comparar dois números</h2>
+            <label for="numero1">Primeiro número:</label>
+            <input type="number" id="numero1">
+            <br>
+            <label for="numero2">Segundo número:</label>
+            <input type="number" id="numero2">
+            <br>
+            <button onclick="maiorNumero()">Verificar número maior</button>
+            <div id="resultado8"></div>
+        </div>
+
+        <div id="exercise9" class="container">
+            <h2>9. Positivo ou Negativo</h2>
+            <label for="numero">Número:</label>
+            <input type="number" id="numero">
+            <br>
+            <button onclick="numeroPositivoOuNegativo()">Verificar se é Positivo ou Negativo</button>
+            <div id="resultado9"></div>
+        </div>
+
+        <div id="exercise10" class="container">
+            <h2>10. Verificar Sexo</h2>
+            <label for="sexo">Sexo:</label>
+            <input type="text" id="sexo">
+            <br>
+            <button onclick="verificarSexo()">Verificar Sexo</button>
+            <div id="resultado10"></div>
+        </div>
+
+        <div id="exercise11" class="container">
+            <h2>11. Vogal ou Consoante</h2>
+            <label for="letra">Valor:</label>
+            <input type="text" id="letra">
+            <br>
+            <button onclick="verificarVogalOuConsoante()">Vogal ou Consoante</button>
+            <div id="resultado11"></div>
+        </div>
+
+        <div id="exercise12" class="container">
+            <h2>12. Divisível por 5</h2>
+            <label for="num">Valor:</label>
+            <input type="number" id="num">
+            <br>
+            <button onclick="verificarDivisivelPorCinco()">Calcular</button>
+            <div id="resultado12"></div>
+        </div>
+
+        <div id="exercise13" class="container">
+            <h2>13. Intervalo 20 e 90</h2>
+            <label for="num13">Valor:</label>
+            <input type="number" id="num13">
+            <br>
+            <button onclick="verificaIntervalo()">Calcular</button>
+            <div id="resultado13"></div>
+        </div>
+
+        <div id="exercise14" class="container">
+            <h2>14. Verificar Votação</h2>
+            <label for="ano">Ano de nascimento:</label>
+            <input type="number" id="ano">
+            <br>
+            <button onclick="verificaVotacao()">Verificar Votação</button>
+            <div id="resultado14"></div>
+        </div>
+
+        <div id="exercise15" class="container">
+            <h2>15. Média do Aluno</h2>
+            <label for="nota1">Primeira nota:</label>
+            <input type="number" id="nota1">
+            <br>
+            <label for="nota2">Segunda nota:</label>
+            <input type="number" id="nota2">
+            <br>
+            <button onclick="verificarMedia()">Verificar média</button>
+            <div id="resultado15"></div>
+        </div>
+
+        <div id="exercise16" class="container">
+            <h2>16. Salário dos Professores</h2>
+            <label for="salarioHora1">Salário hora do primeiro professor:</label>
+            <input type="number" id="salarioHora1">
+            <br>
+            <label for="salarioHora2">Salário hora do segundo professor:</label>
+            <input type="number" id="salarioHora2">
+            <br>
+            <label for="horasTrabalhadas1">Horas trabalhadas do primeiro professor:</label>
+            <input type="number" id="horasTrabalhadas1">
+            <br>
+            <label for="horasTrabalhadas2">Horas trabalhadas do primeiro professor:</label>
+            <input type="number" id="horasTrabalhadas2">
+            <br>
+            <button onclick="calcularSalario()">Calcular salário</button>
+            <div id="resultado16"></div>
+        </div>
+
+        <div id="exercise17" class="container">
+            <h2>17. Par ou Ímpar</h2>
+            <label for="num17">Número:</label>
+            <input type="number" id="num17">
+            <br>
+            <button onclick="parOuImpar()">Par ou Ímpar</button>
+            <div id="resultado17"></div>
+        </div>
+
+        <div id="exercise18" class="container">
+            <h2>18. Média Parcial</h2>
+            <label for="notaParcial1">Primeira nota:</label>
+            <input type="number" id="notaParcial1">
+            <br>
+            <label for="notaParcial2">Segunda nota:</label>
+            <input type="number" id="notaParcial2">
+            <br>
+            <button onclick="verificarMediaParcial()">Verificar média</button>
+            <div id="resultado18"></div>
+        </div>
+        
+        <div id="exercise19" class="container">
+            <h2>19. Números negativos e média positiva</h2>
+            
+            <!-- Campos de entrada para os 20 valores -->
+            <div id="inputs-container">
+                <label for="ex19N1">Valor 1:</label>
+                <input type="number" id="ex19N1">
+                <br>
+                <label for="ex19N2">Valor 2:</label>
+                <input type="number" id="ex19N2">
+                <br>
+                <label for="ex19N3">Valor 3:</label>
+                <input type="number" id="ex19N3">
+                <br>
+                <label for="ex19N4">Valor 4:</label>
+                <input type="number" id="ex19N4">
+                <br>
+                <label for="ex19N5">Valor 5:</label>
+                <input type="number" id="ex19N5">
+                <br>
+                <label for="ex19N6">Valor 6:</label>
+                <input type="number" id="ex19N6">
+                <br>
+                <label for="ex19N7">Valor 7:</label>
+                <input type="number" id="ex19N7">
+                <br>
+                <label for="ex19N8">Valor 8:</label>
+                <input type="number" id="ex19N8">
+                <br>
+                <label for="ex19N9">Valor 9:</label>
+                <input type="number" id="ex19N9">
+                <br>
+                <label for="ex19N10">Valor 10:</label>
+                <input type="number" id="ex19N10">
+                <br>
+                <label for="ex19N11">Valor 11:</label>
+                <input type="number" id="ex19N11">
+                <br>
+                <label for="ex19N12">Valor 12:</label>
+                <input type="number" id="ex19N12">
+                <br>
+                <label for="ex19N13">Valor 13:</label>
+                <input type="number" id="ex19N13">
+                <br>
+                <label for="ex19N14">Valor 14:</label>
+                <input type="number" id="ex19N14">
+                <br>
+                <label for="ex19N15">Valor 15:</label>
+                <input type="number" id="ex19N15">
+                <br>
+                <label for="ex19N16">Valor 16:</label>
+                <input type="number" id="ex19N16">
+                <br>
+                <label for="ex19N17">Valor 17:</label>
+                <input type="number" id="ex19N17">
+                <br>
+                <label for="ex19N18">Valor 18:</label>
+                <input type="number" id="ex19N18">
+                <br>
+                <label for="ex19N19">Valor 19:</label>
+                <input type="number" id="ex19N19">
+                <br>
+                <label for="ex19N20">Valor 20:</label>
+                <input type="number" id="ex19N20">
+                <br>
+            </div>
+    
+            <button onclick="calculate()">Calcular</button>
+            <div id="resultado19"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
