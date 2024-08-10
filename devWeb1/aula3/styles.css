@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #222831;
+    color: #EEEEEE; /* Alterado para garantir que o texto padrão seja da cor desejada */
+}
+
+h1, h2 {
+    color: #00ADB5; /* Cor dos títulos */
+}
+
+#menu {
+    background-color: #393E46;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu li {
+    margin-bottom: 10px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #EEEEEE; /* Cor do texto dos links do menu */
+    font-weight: bold;
+}
+
+#menu a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    background-color: #393E46;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #EEEEEE; /* Cor do texto dentro dos containers */
+}
+
+button {
+    background-color: #00ADB5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #07888f;
+}
+
+label {
+    font-weight: bold;
+    color: #EEEEEE; /* Cor dos labels */
+}
+
+input[type="number"] {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input[type="number"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+#resultado1, #resultado2, #resultado3, #resultado4, #resultado5, #resultado6, #resultado7, #resultado8 {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #222831; 
+    border-radius: 5px;
+    color: #EEEEEE; 
+    white-space: pre-line; 
+}
