@@ -1,18 +1,15 @@
 const app = Vue.createApp({
-    data() {
-       return {
-          cart: [],
-          premium: true,
-          details: ['50% cotton', '30% wool', '20% polyester'],
-       }
+  data() {
+    return {
+      cart: [],
+    };
+  },
+  methods: {
+    updateCart(id) {
+      this.cart.push(id);
     },
-    methods: {
-      updateCart(id) {
-         this.cart.push(id)
-      },
-      removeFromCart(id) {
-         const index = this.cart.indexOf(id);
-         this.cart.splice(index, 1);
-      },
-    }
- })
+    removeCart(id) {
+      this.cart.pop(id);
+    },
+  },
+});
