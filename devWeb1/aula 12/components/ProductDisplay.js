@@ -4,49 +4,53 @@ app.component("product-display", {
       type: Boolean,
       required: true,
     },
+    details: {
+        type: Array,
+        required: true,
+    }
   },
   template:
     /*html*/
     `<div class="product-display">
-    <div class="product-container">
-      <div class="product-image">
-        <img v-bind:src="image">
-      </div>
-      <div class="product-info">
-        <h1>{{ title }}</h1>
+        <div class="product-container">
+          <div class="product-image">
+            <img v-bind:src="image">
+          </div>
+          <div class="product-info">
+            <h1>{{ title }}</h1>
+    
+            <p v-if="inStock">In Stock</p>
+            <p v-else>Out of Stock</p>
+            <p>Shipping: {{ shipping }}</p>
+    
+            <div 
+              v-for="(variant, index) in variants" 
+              :key="variant.id" 
+              @mouseover="updateVariant(index)" 
+              class="color-circle" 
+              :style="{ backgroundColor: variant.color }">
+            </div>
 
-        <p v-if="inStock">In Stock</p>
-        <p v-else>Out of Stock</p>
-
-        <p>Shipping: {{ shipping }}</p>
-
-        <ul>
-          <li v-for="detail in details">{{ detail }}</li>
-        </ul>
-
-        <div 
-          v-for="(variant, index) in variants" 
-          :key="variant.id" 
-          @mouseover="updateVariant(index)" 
-          class="color-circle" 
-          :style="{ backgroundColor: variant.color }">
+            <ul v-for="detail in details">
+                <li>{{ detail }}</li>            
+            </ul>
+            <button 
+              class="button" 
+              :class="{ disabledButton: !inStock }" 
+              :disabled="!inStock" 
+              v-on:click="addToCart">
+              Add to Cart
+            </button>
+            <button 
+              class="button" 
+              :class="{ disabledButton: !inStock }" 
+              :disabled="!inStock" 
+              v-on:click="removeFromCart">
+              Remove Item
+            </button>
+          </div>
         </div>
-        
-        <button 
-          class="button" 
-          :class="{ disabledButton: !inStock }" 
-          :disabled="!inStock" 
-          v-on:click="addToCart">
-          Add to Cart
-        </button>
-        <button 
-        class="button" 
-        v-on:click="removeToCart">
-        Remove Item
-      </button>
-      </div>
-    </div>
-  </div>`,
+      </div>`,
   data() {
     return {
       product: "Socks",
@@ -73,12 +77,12 @@ app.component("product-display", {
     addToCart() {
       this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
     },
+    removeFromCart() {
+      this.$emit('remove-from-cart', this.variants[this.selectedVariant].id)
+    },
     updateVariant(index) {
       this.selectedVariant = index;
     },
-    removeToCart() {
-      this.$emit('remove-to-cart', this.variants[this.selectedVariant].id)
-    }
   },
   computed: {
     title() {
